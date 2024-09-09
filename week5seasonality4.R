@@ -131,10 +131,6 @@ Pplot <- res[365:1096,2:(param$n+1)]
 Nplot <- res[365:1096,(param$n+2):(2*param$n+1)]
 Dplot <- res[365:1096,(2*param$n+2):(3*param$n+1)]
 
-Pplot <- res[,2:(param$n+1)]
-Nplot <- res[,(param$n+2):(2*param$n+1)]
-Dplot <- res[,(2*param$n+2):(3*param$n+1)]
-
 dim(Nplot)
 nrow(Pplot)
 nrow(Dplot)
@@ -160,6 +156,11 @@ image.plot(timeplot/365, param$z, Dplot, ylim=rev(range(param$z)), ylab="", xlab
            main=dlab, col=rev(rainbow(300, start = 0.1, end = 0.6)), cex.axis = 1.3, cex.lab = 1.3)
 box()
 #970 420
+
+# Redefine vectors
+Pplot <- res[,2:(param$n+1)]
+Nplot <- res[,(param$n+2):(2*param$n+1)]
+Dplot <- res[,(2*param$n+2):(3*param$n+1)]
 
 #vertical Profiles of Phytoplankton at the summer solstice
 par(mfrow=c(1,4))
